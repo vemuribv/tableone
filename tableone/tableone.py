@@ -1429,8 +1429,8 @@ class TableOne:
 
             table['P-Value (adjusted)'] = table['P-Value (adjusted)'].apply(
                                                 '{:.3f}'.format).astype(str)
-            table.loc[table['P-Value (adjusted)'] == '0.000',
-                      'P-Value (adjusted)'] = '<0.001'
+            # table.loc[table['P-Value (adjusted)'] == '0.000',
+            #           'P-Value (adjusted)'] = '<0.001'
 
             if self._pval_threshold:
                 table.loc[asterisk_mask, 'P-Value (adjusted)'] = table['P-Value (adjusted)'][asterisk_mask].astype(str)+"*"  # type: ignore
@@ -1441,7 +1441,7 @@ class TableOne:
 
             table['P-Value'] = table['P-Value'].apply(
                                      '{:.3f}'.format).astype(str)
-            table.loc[table['P-Value'] == '0.000', 'P-Value'] = '<0.001'
+            # table.loc[table['P-Value'] == '0.000', 'P-Value'] = '<0.001'
 
             if self._pval_threshold:
                 table.loc[asterisk_mask, 'P-Value'] = table['P-Value'][asterisk_mask].astype(str)+"*"  # type: ignore
@@ -1450,7 +1450,7 @@ class TableOne:
         if self._smd:
             for c in list(self.smd_table.columns):
                 table[c] = table[c].apply('{:.3f}'.format).astype(str)
-                table.loc[table[c] == '0.000', c] = '<0.001'
+                # table.loc[table[c] == '0.000', c] = '<0.001'
 
         # if an order is specified, apply it
         if self._order:
