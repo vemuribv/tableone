@@ -1243,7 +1243,7 @@ class TableOne:
             msg = ("No P-Value was computed for {variable} due to the low "
                    "number of observations.""").format(variable=v)
             warnings.warn(msg)
-            return 100000, ptest
+            return 1.000, ptest
 
         # continuous
         if (is_continuous and is_normal and len(grouped_data) == 2
