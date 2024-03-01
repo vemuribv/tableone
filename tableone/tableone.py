@@ -1096,6 +1096,7 @@ class TableOne:
 
         # list values for each variable, grouped by groupby levels
         for v in df.index:
+            print(v)
             is_continuous = df.loc[v]['continuous']
             is_categorical = ~df.loc[v]['continuous']
             is_normal = ~df.loc[v]['nonnormal']
