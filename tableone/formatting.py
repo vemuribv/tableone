@@ -61,7 +61,7 @@ def format_pvalues(table, pval, pval_adjust, pval_threshold):
             table.loc[asterisk_mask, 'P-Value'] = (
                 table['P-Value'][asterisk_mask].astype(str)+"*"  # type: ignore
             )
-
+    print(asterisk_mask)
     return table
 
 
